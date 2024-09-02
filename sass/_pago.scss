@@ -1,4 +1,6 @@
-body {
+
+
+.containerPayment{
     font-family: 'DM Sans', sans-serif;
     background-color: white;
     margin: 0;
@@ -12,7 +14,7 @@ body {
     }
 
 
-.container {
+.containerPago{
     display: flex;
     margin: 10px 80px;
     justify-content: space-between;
@@ -72,7 +74,7 @@ input[type="text"] {
     box-sizing: border-box;
 }
 
-button[type="submit"] {
+.btnPago[type="submit"] {
     background-color: #5B1DAE;
     color: white;
     padding: 8px;
@@ -139,36 +141,7 @@ button[type="submit"] {
     font-size: 0.8rem;
     color: #667;
 }
-.footer {
-    margin-top: 10px;
-    padding: 8px 0;
-    width: 100%;
-    color: #667;
-    text-decoration: none;
-    text-align: center;
-    font-size: 12px;
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    padding-left: 35px; 
-    padding-right: 40px; 
-    gap: 50px;
-    box-sizing: border-box;
 
-}
-
-.footer span {
-    margin-right: auto; 
-    text-align: left;
-    color: rgb(163, 174, 208);
-    
-}
-.footer{
-    a{
-        color: #3f3f3f;
-        text-decoration: none;
-    }
-}
 .Price{
         font-size: 22px;
         font-weight: bold;
