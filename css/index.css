@@ -1093,100 +1093,6 @@ a {
   cursor: pointer;
 }
 
-/* línea amarilla del fondo */
-.line {
-  position: absolute;
-  transform-origin: center;
-  transform: rotate(-150deg);
-  top: 50%;
-  left: -20%;
-  width: 160%;
-  height: 30%;
-  background-color: rgba(227, 177, 52, 0.15);
-  z-index: -1;
-  clip-path: polygon(0 0, 100% 34%, 100% 69%, 0% 100%);
-}
-
-.AboutUs {
-  text-align: center;
-  padding: 75px 20px;
-}
-.AboutUsTitle {
-  font-size: 2rem;
-  color: #1e0342;
-  font-weight: 500;
-  margin-bottom: 40px;
-}
-
-.members-section {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.top-row {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  padding: 0 10px;
-  width: 90%;
-  max-width: 800px;
-  height: auto;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-.bottom-row {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  padding: 0 10px;
-  margin-top: 20px;
-  width: 90%;
-  max-width: 800px;
-  height: auto;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-.member {
-  width: 100%;
-  max-width: 180px;
-}
-.member-information h2 {
-  margin: 10px 0 5px;
-  font-size: 16px;
-  color: #5b1dae;
-}
-.member-information p {
-  margin: 0;
-  font-size: 12px;
-  color: #e3b134;
-  text-transform: uppercase;
-}
-.member-photo {
-  height: 50%;
-  border-radius: 50%;
-  object-fit: cover;
-  width: 60%;
-  box-shadow: 2px 1px 5px #3f3f3f;
-  transition: transform 0.3s ease-in-out;
-}
-.member-photo:hover {
-  transform: scale(1.1);
-}
-
-.botontrabaja {
-  background-color: #e3b134;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-weight: bold;
-  margin-top: 40px;
-  cursor: pointer;
-  box-shadow: 2px 1px 5px #3f3f3f;
-}
-
 .setting {
   height: auto;
 }
@@ -1452,7 +1358,6 @@ a {
   box-shadow: none;
 }
 
-/*Import*/
 /*
 ================================
   -------globales--------  
@@ -1492,132 +1397,180 @@ body a {
 }
 
 /*Variables*/
-/*
-  body {
-      background-color: #edf2f6;
-      font-family: "Roboto", sans-serif;
-      margin: 0;
-      padding: 0;
-  }*/
 .fondo {
   background-color: #edf2f6;
 }
 
-/*Profile*/
+/* Profile */
 .mainProfile {
   margin: 20px auto;
-  max-width: 98rem;
+  width: 80%;
   background-color: #ffffff;
   border-radius: 0.5rem;
-  min-height: 58vw;
+  font-family: var(--f_fontFamily), var(--f_fontFamily--Secundary);
 }
 .mainProfile .containerProfile {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-template-rows: 20rem 1fr 1fr;
+  gap: 0;
+  /* Equivalente a grid-column-gap y grid-row-gap: 0px */
   width: 100%;
-  height: 100%;
-  max-height: 500px;
+}
+.mainProfile .containerProfile .subtitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 1rem;
 }
 .mainProfile .containerProfile .profileBanner {
   grid-area: 1/1/2/6;
   height: 12rem;
-  background-image: url("../components/img/Portada.png");
+  background-image: url("../components/img/Profile/Portada.png");
   background-size: cover;
   background-position: center;
   border-radius: 8px 8px 0px 0px;
 }
-.mainProfile .containerProfile .profileBanner .profilePic {
+.mainProfile .containerProfile .profileBanner .userData {
   position: relative;
+  display: flex;
+  flex-direction: row;
+  bottom: -6rem;
   margin: 20px;
+  align-items: center;
+}
+.mainProfile .containerProfile .profileBanner .userData .profilePic {
   width: 12rem;
   height: 12rem;
   border-radius: 50%;
-  /* Hace que la imagen corte el banner */
-  bottom: -6rem;
 }
-.mainProfile .containerProfile .profileBanner .userData {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  margin-left: 14rem;
+.mainProfile .containerProfile .profileBanner .userData .rating {
+  margin: 0.5rem;
+  align-content: center;
+  padding: 0.5rem;
 }
-.mainProfile .containerProfile .profileBanner .userData .datos {
-  flex-direction: column;
-}
-.mainProfile .containerProfile .profileBanner .userData h1 {
+.mainProfile .containerProfile .profileBanner .userData .rating h1 {
   font-size: 2.3rem;
   font-weight: 700;
   margin-bottom: 0.25rem;
 }
-.mainProfile .containerProfile .profileBanner .userData p {
+.mainProfile .containerProfile .profileBanner .userData .rating p {
   font-size: 1rem;
   margin-top: 0;
 }
-.mainProfile .containerProfile .profileBanner .userData .btn-contratar {
-  width: 12rem;
-  height: 100%;
-  margin: 1rem;
+.mainProfile .containerProfile .profileBanner .userData .rating .rating-wrapper {
+  align-self: center;
+  border-radius: 5rem;
+  display: inline-flex;
+  direction: rtl !important;
+  padding: 0.7rem 0.7rem;
+  margin-left: auto;
 }
-.mainProfile .containerProfile .profileBanner .button__styleY {
+.mainProfile .containerProfile .profileBanner .userData .rating .rating-wrapper label {
+  color: #E1E6F6;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 2.2rem;
+  padding: 0 0.2rem;
+  transition: color 0.5s;
+}
+.mainProfile .containerProfile .profileBanner .userData .rating .rating-wrapper svg {
+  -webkit-text-fill-color: transparent;
+  -webkit-filter: drop-shadow 4px 1px 6px rgb(198, 206, 237);
+  filter: drop-shadow(5px 1px 3px rgb(198, 206, 237));
+}
+.mainProfile .containerProfile .profileBanner .userData .rating .rating-wrapper input {
+  display: none;
+}
+.mainProfile .containerProfile .profileBanner .userData .rating .rating-wrapper label:hover,
+.mainProfile .containerProfile .profileBanner .userData .rating .rating-wrapper label:hover ~ label,
+.mainProfile .containerProfile .profileBanner .userData .rating .rating-wrapper input:checked ~ label {
+  color: #e3b134;
+}
+.mainProfile .containerProfile .profileBanner .userData .button__styleY {
   background-color: #e3b134;
   color: #ffffff;
   font-size: 1.2rem;
   font-weight: bold;
-  border: 0.1rem solid #5b1dae;
-  padding: 8px 48px;
-  border-radius: 16px;
-  margin: 0 0.5rem 0 0;
+  border-radius: 3rem;
+  margin-top: 1rem;
+  max-height: 3.5rem;
+  border: none;
+  padding: 0.5rem 2rem;
+  width: 100%;
 }
-.mainProfile .containerProfile .profileBanner .button__styleY:hover {
+.mainProfile .containerProfile .profileBanner .userData .button__styleY:hover {
   box-shadow: 2px 1px 5px #3f3f3f;
-  background-color: #fdd87b;
-}
-.mainProfile .containerProfile .profileBanner .ProfileAboutMe {
-  grid-area: 2/1/3/3;
-  border: 1px solid #5b1dae;
-  justify-content: center;
-  max-width: 40rem;
-  height: 100%;
-}
-.mainProfile .containerProfile .profileBanner .ProfileAboutMe p {
-  margin: 20px;
 }
 .mainProfile .containerProfile .rightSection {
   grid-area: 2/2/3/3;
-}
-.mainProfile .containerProfile .rightSection .postulations {
-  margin: 0;
 }
 .mainProfile .containerProfile .ProfileLeftSection {
   grid-area: 2/1/3/2;
 }
 .mainProfile .containerProfile .ProfileLeftSection .ProfileAboutMe {
-  margin: 20px auto;
-  padding: 6rem 4rem 0 4rem;
-  max-width: 50rem;
+  padding: 0 4rem;
 }
-.mainProfile .resenas {
+.mainProfile .containerProfile .ProfileLeftSection .ProfileAboutMe .description {
+  margin: 0.5rem;
+  font-size: 1.2rem;
+}
+.mainProfile .reviews {
   grid-area: 3/1/4/2;
   margin: 0 4rem;
 }
-.mainProfile .resenas .resena {
-  margin: 20px auto;
+.mainProfile .reviews .review {
+  margin: 1rem;
   padding: 1rem;
-  max-width: 50rem;
-  border-radius: 10px;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border: 2px solid #e0e0e0;
 }
-.mainProfile .resenas .resena .resena-body {
-  border: 1px solid #5b1dae;
+.mainProfile .reviews .review .review-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
 }
-.mainProfile .ofertas {
+.mainProfile .reviews .review .review-header .reviewer h4 {
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+}
+.mainProfile .reviews .review .review-header .reviewer .review-rating {
+  display: flex;
+}
+.mainProfile .reviews .review .review-header .reviewer .review-star {
+  color: #e3b134;
+  font-size: 2rem;
+}
+.mainProfile .reviews .review .review-profile-image {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: #e3b134 2px solid;
+}
+.mainProfile .reviews .review .review-ver-imagenes {
+  margin-left: auto;
+  font-size: 14px;
+  color: #007bff;
+  cursor: pointer;
+}
+.mainProfile .reviews .review .review-body {
+  padding: 10px;
+  border: 1px solid rgba(152, 75, 253, 0.4);
+  border-radius: 5px;
+}
+.mainProfile .reviews .review .review-body .review-comment {
+  display: flex;
+  align-items: center;
+}
+.mainProfile .reviews .review .review-body .review-comment .review-comment-icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+.mainProfile .offers {
   grid-area: 3/2/4/3;
-}
-.mainProfile h2 {
-  font-size: 30;
-  margin: 20px auto;
 }
 
 .accepted {
@@ -1628,68 +1581,55 @@ body a {
 .job-card {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 15px;
-  border-radius: 15px;
+  padding: 1.5rem;
+  border-radius: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   border: 2px solid #e0e0e0;
-  max-width: 600px;
-  margin: 20px;
-  font-family: Arial, sans-serif;
+  margin: 1rem 2rem;
 }
 .job-card .actionButtons {
   display: flex;
   flex-direction: column;
   margin: 0.5rem;
 }
-.job-card .actionButtons a {
-  margin-top: 0.3rem;
+.job-card .actionButtons .offerButton {
+  width: 100%;
 }
-
-.job-image img {
-  max-width: 6rem;
+.job-card .job-image img {
   border-radius: 10px;
   object-fit: cover;
-  margin-right: 15px;
+  border: #e3b134 2px solid;
+  width: 7rem;
+  height: 7rem;
 }
-
-.job-info {
+.job-card .job-info {
   flex-grow: 1;
+  margin: 0 1rem;
 }
-
-.jobName {
-  font-size: 1.3rem;
-}
-
-.job-info h3 {
+.job-card .job-info h3 {
   margin: 0;
   font-weight: bold;
   color: #333;
 }
-
-.job-info p {
+.job-card .job-info p {
   margin: 5px 0;
   font-size: 14px;
   color: #666;
 }
-
-.job-info p i {
+.job-card .job-info p i {
   margin-right: 5px;
   color: #7b1fa2;
 }
-
-.jobDetails {
+.job-card .job-info .jobDetails {
   font-weight: 700;
 }
-
-.jobVector {
+.job-card .job-info .jobVector {
   height: 1.5rem;
   width: 1.5rem;
   margin: 0 0.2rem;
 }
-
-.status {
+.job-card .status {
   padding: 8px 15px;
   border-radius: 20px;
   font-size: 14px;
@@ -1697,24 +1637,24 @@ body a {
   display: flex;
   align-items: center;
 }
-
-.pending {
+.job-card .pending {
   background-color: #1976d2;
   color: #fff;
 }
-
-.pending::before {
-  font-family: "Font Awesome 5 Free";
-  /* Asegúrate de tener Font Awesome incluido */
-  font-weight: 900;
+.job-card .pending::before {
+  font-weight: 700;
   margin-right: 5px;
+}
+
+.job-card:hover {
+  box-shadow: 0 4px 10px rgba(152, 75, 253, 0.6);
+  transform: translateY(-5px);
 }
 
 .profileSkills {
   max-width: 50rem;
   margin: 20px auto;
   font-family: Arial, sans-serif;
-  margin: 20px auto;
   padding: 0.5rem 4rem;
 }
 
@@ -1731,7 +1671,8 @@ body a {
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 0.5rem;
+  padding: 0 1rem;
 }
 
 .tag {
@@ -1745,7 +1686,6 @@ body a {
   justify-content: space-between;
   cursor: pointer;
 }
-
 .tag::before {
   margin-right: 8px;
   font-weight: bold;
@@ -1762,102 +1702,8 @@ body a {
   display: flex;
   align-items: center;
 }
-
 .add-tag:hover {
   text-decoration: underline;
-}
-
-.resena {
-  padding: 15px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  border: 2px solid #e0e0e0;
-  padding: 15px;
-  border-radius: 5px;
-  width: 600px;
-  margin: 20px auto;
-}
-
-.resena-header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 10px;
-}
-.resena-header h4 {
-  margin: 0 0.5rem 0 0.5rem;
-  font-size: 1.2rem;
-}
-
-.resena-profile-image {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-.resena-rating {
-  display: flex;
-}
-
-.resena-star {
-  color: #ffc107;
-  font-size: 18px;
-}
-
-.resena-ver-imagenes {
-  margin-left: auto;
-  font-size: 14px;
-  color: #007bff;
-  cursor: pointer;
-}
-
-.resena-body {
-  padding: 10px;
-  border: 1px solid #e0e0e0;
-  border-radius: 5px;
-}
-
-.resena-comment {
-  display: flex;
-  align-items: center;
-}
-
-.resena-comment-icon {
-  font-size: 20px;
-  margin-right: 10px;
-}
-
-.offerButton,
-.hireButton {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.3s ease;
-  display: inline-block;
-  min-width: 100px;
-  text-align: center;
-}
-
-.offerButton {
-  background-color: #f0ad4e;
-  color: #fff;
-}
-
-.offerButton:hover {
-  background-color: #ec971f;
-}
-
-.hireButton {
-  background-color: #6c63ff;
-  color: #fff;
-}
-
-.hireButton:hover {
-  background-color: #5a54e6;
 }
 
 /* línea amarilla del fondo */
